@@ -1,0 +1,17 @@
+set,contact top,customers,precision,recall (gain),lift
+test (n=1000),5%,50,1.0,0.521,10.417
+test (n=1000),10%,100,0.93,0.969,9.688
+test (n=1000),15%,150,0.64,1.0,6.667
+test (n=1000),20%,200,0.48,1.0,5.0
+test (n=1000),30%,300,0.32,1.0,3.333
+test (n=1000),needed for 80% recall,77,,0.8,
+test (n=1000),needed for 90% recall,87,,0.9,
+test (n=1000),needed for 95% recall,96,,0.95,
+out-of-fold train (n=4000),5%,200,1.0,0.521,10.417
+out-of-fold train (n=4000),10%,400,0.892,0.93,9.297
+out-of-fold train (n=4000),15%,600,0.633,0.99,6.597
+out-of-fold train (n=4000),20%,800,0.48,1.0,5.0
+out-of-fold train (n=4000),30%,1200,0.32,1.0,3.333
+out-of-fold train (n=4000),needed for 80% recall,310,,0.8,
+out-of-fold train (n=4000),needed for 90% recall,371,,0.9,
+out-of-fold train (n=4000),needed for 95% recall,423,,0.95,

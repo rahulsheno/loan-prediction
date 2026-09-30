@@ -1,0 +1,17 @@
+feature,PSI,KS,KS p,scenario
+Age,0.0076,0.031,0.4205,train_vs_test
+Experience,0.0108,0.0385,0.1837,train_vs_test
+Income,0.0226,0.0522,0.0248,train_vs_test
+CCAvg,0.0145,0.0385,0.1837,train_vs_test
+Mortgage,0.0051,0.0242,0.7289,train_vs_test
+Family,0.0056,0.033,0.3439,train_vs_test
+Education,0.0002,0.0102,1.0,train_vs_test
+MODEL SCORE,0.032,0.053,0.0219,train_vs_test
+Age,0.0076,0.031,0.4205,simulated_shift
+Experience,0.0108,0.0385,0.1837,simulated_shift
+Income,0.1798,0.1852,0.0,simulated_shift
+CCAvg,0.1821,0.1792,0.0,simulated_shift
+Mortgage,0.0051,0.0242,0.7289,simulated_shift
+Family,0.0056,0.033,0.3439,simulated_shift
+Education,0.0002,0.0102,1.0,simulated_shift
+MODEL SCORE,0.2016,0.1955,0.0,simulated_shift

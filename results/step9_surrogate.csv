@@ -1,0 +1,7 @@
+model,fidelity,F1 vs truth,recall,precision
+final LightGBM (teacher),1.0,0.958,0.958,0.958
+surrogate depth 2,0.957,0.746,0.781,0.714
+surrogate depth 3,0.987,0.904,0.927,0.881
+surrogate depth 4,0.997,0.953,0.958,0.948
+surrogate depth 5,0.989,0.925,0.958,0.893
+plain tree depth 3 (true labels),0.987,0.904,0.927,0.881

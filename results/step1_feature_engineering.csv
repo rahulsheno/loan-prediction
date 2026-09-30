@@ -1,0 +1,16 @@
+model,features,pr_auc,roc_auc,f1,pr_auc_std
+LightGBM,base,0.9802,0.9975,0.923,0.0089
+LightGBM,+cc_to_income,0.9799,0.9974,0.9211,0.009
+LightGBM,+income_per_family,0.9819,0.9976,0.9221,0.0065
+LightGBM,+mortgage_to_income,0.9801,0.9974,0.9216,0.0077
+LightGBM,+all three,0.981,0.9975,0.9205,0.0067
+XGBoost,base,0.9807,0.9975,0.9166,0.0075
+XGBoost,+all three,0.9809,0.9976,0.9174,0.0066
+HistGB,base,0.98,0.9971,0.9176,0.0085
+HistGB,+all three,0.9815,0.9976,0.9236,0.0067
+RandomForest,base,0.9777,0.9969,0.9123,0.0091
+RandomForest,+all three,0.9783,0.9972,0.9065,0.0073
+MLP,base,0.9507,0.9897,0.895,0.012
+MLP,+all three,0.9544,0.9902,0.8914,0.0069
+LogReg,base,0.7849,0.958,0.6122,0.0373
+LogReg,+all three,0.7939,0.961,0.6304,0.0362

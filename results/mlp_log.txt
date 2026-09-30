@@ -1,0 +1,32 @@
+== 1. Scaling (paper's claim) ==
+unscaled (100,)                            AUC=0.983 PR-AUC=0.916 F1=0.818 recall=0.742
+scaled   (100,)                            AUC=0.988 PR-AUC=0.948 F1=0.892 recall=0.862
+
+== 2. Architecture (scaled) ==
+hidden=(16,)                               AUC=0.987 PR-AUC=0.943 F1=0.869 recall=0.839
+hidden=(50,)                               AUC=0.989 PR-AUC=0.945 F1=0.879 recall=0.849
+hidden=(100,)                              AUC=0.988 PR-AUC=0.948 F1=0.892 recall=0.862
+hidden=(64, 32)                            AUC=0.988 PR-AUC=0.945 F1=0.882 recall=0.854
+hidden=(128, 64, 32)                       AUC=0.990 PR-AUC=0.951 F1=0.891 recall=0.857
+
+== 3. Activation / regularisation / early stopping (hidden=(64,32)) ==
+activation=relu                            AUC=0.988 PR-AUC=0.945 F1=0.882 recall=0.854
+activation=tanh                            AUC=0.989 PR-AUC=0.948 F1=0.887 recall=0.875
+activation=logistic                        AUC=0.992 PR-AUC=0.957 F1=0.885 recall=0.859
+alpha(L2)=0.0001                           AUC=0.988 PR-AUC=0.945 F1=0.882 recall=0.854
+alpha(L2)=0.01                             AUC=0.989 PR-AUC=0.948 F1=0.883 recall=0.849
+alpha(L2)=0.1                              AUC=0.991 PR-AUC=0.954 F1=0.889 recall=0.852
+early_stopping=True                        AUC=0.980 PR-AUC=0.906 F1=0.819 recall=0.737
+solver=adam                                AUC=0.988 PR-AUC=0.945 F1=0.882 recall=0.854
+solver=lbfgs                               AUC=0.983 PR-AUC=0.911 F1=0.875 recall=0.870
+
+== 4. Imbalance: SMOTE inside CV folds (hidden=(64,32)) ==
+SMOTE + MLP                                AUC=0.988 PR-AUC=0.941 F1=0.877 recall=0.849
+
+== 5. Grid search (optimise PR-AUC) ==
+best: {'m__activation': 'tanh', 'm__alpha': 0.1, 'm__hidden_layer_sizes': (100,)} CV PR-AUC=0.958
+
+== 6. Seed stability on TEST set (10 random inits) ==
+default (100,)             AUC=0.9951±0.0006  PR-AUC=0.973±0.002  F1=0.923±0.009  recall=0.940  precision=0.907
+tuned                      AUC=0.9948±0.0003  PR-AUC=0.975±0.001  F1=0.921±0.007  recall=0.904  precision=0.939
+tuned + SMOTE              AUC=0.9957±0.0005  PR-AUC=0.975±0.002  F1=0.883±0.014  recall=0.961  precision=0.818

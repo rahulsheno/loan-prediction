@@ -1,0 +1,9 @@
+relu           CV PR-AUC=0.953 CV F1=0.903 | test AUC=0.9939 PR-AUC=0.965 F1=0.907 rec=0.917 prec=0.898
+leaky_relu     CV PR-AUC=0.951 CV F1=0.904 | test AUC=0.9941 PR-AUC=0.966 F1=0.912 rec=0.920 prec=0.905
+elu            CV PR-AUC=0.954 CV F1=0.902 | test AUC=0.9950 PR-AUC=0.971 F1=0.911 rec=0.924 prec=0.899
+tanh           CV PR-AUC=0.946 CV F1=0.890 | test AUC=0.9960 PR-AUC=0.974 F1=0.912 rec=0.931 prec=0.894
+sigmoid        CV PR-AUC=0.944 CV F1=0.864 | test AUC=0.9943 PR-AUC=0.969 F1=0.900 rec=0.872 prec=0.930
+softplus       CV PR-AUC=0.953 CV F1=0.890 | test AUC=0.9950 PR-AUC=0.975 F1=0.927 rec=0.924 prec=0.932
+swish(SiLU)    CV PR-AUC=0.954 CV F1=0.894 | test AUC=0.9941 PR-AUC=0.968 F1=0.904 rec=0.920 prec=0.889
+gelu           CV PR-AUC=0.951 CV F1=0.891 | test AUC=0.9938 PR-AUC=0.966 F1=0.907 rec=0.910 prec=0.904
+linear(none)   CV PR-AUC=0.803 CV F1=0.703 | test AUC=0.9638 PR-AUC=0.826 F1=0.719 rec=0.649 prec=0.806

@@ -1,0 +1,4 @@
+model,test PR-AUC,test F1,recall,precision
+default,0.9932,0.9543,0.9792,0.9307
+"monotone Income+, CD+",0.9867,0.9246,0.9583,0.8932
+Optuna-tuned,0.9956,0.9688,0.9688,0.9688

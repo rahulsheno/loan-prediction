@@ -1,0 +1,7 @@
+weighted,calibration,brier,log_loss,ece,pr_auc
+False,sigmoid,0.011,0.0399,0.005,0.9796
+True,sigmoid,0.0111,0.04,0.0061,0.9798
+True,none,0.0113,0.0378,0.0056,0.9814
+True,isotonic,0.0114,0.0376,0.0045,0.9793
+False,isotonic,0.0115,0.0401,0.004,0.9773
+False,none,0.0116,0.0405,0.006,0.9806

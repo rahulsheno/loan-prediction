@@ -1,0 +1,5 @@
+variant,CV PR-AUC,CV F1,diff vs default,NB p
+default LightGBM,0.9801,0.9216,0.0,
+"monotone Income+, CD Account+",0.9755,0.9161,-0.0046,0.1358
+"monotone Income+, CCAvg+, CD Account+",0.9697,0.9077,-0.0104,0.0306
+Optuna-tuned (fresh folds),0.9843,0.9405,0.0047,0.0287

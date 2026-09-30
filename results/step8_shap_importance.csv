@@ -1,0 +1,12 @@
+,mean_abs_shap
+Income,2.842
+Education,1.2801
+CCAvg,0.7911
+Family,0.6894
+Age,0.2631
+Experience,0.1692
+CD Account,0.1375
+Mortgage,0.0894
+CreditCard,0.0767
+Securities Account,0.0544
+Online,0.0512

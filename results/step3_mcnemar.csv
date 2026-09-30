@@ -1,0 +1,6 @@
+vs,best_right_other_wrong,other_right_best_wrong,p
+HistGB,2,2,1.0
+XGBoost,3,0,0.25
+RandomForest,6,5,1.0
+AdaBoost,4,5,1.0
+MLP,9,5,0.424

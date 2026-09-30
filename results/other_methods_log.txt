@@ -1,0 +1,15 @@
+Gaussian Naive Bayes             CV PR-AUC=0.569 CV F1=0.485 | test AUC=0.9215 PR-AUC=0.522 F1=0.465 rec=0.552 prec=0.402
+LDA                              CV PR-AUC=0.752 CV F1=0.654 | test AUC=0.9581 PR-AUC=0.754 F1=0.652 rec=0.604 prec=0.707
+QDA                              CV PR-AUC=0.678 CV F1=0.601 | test AUC=0.9488 PR-AUC=0.631 F1=0.571 rec=0.604 prec=0.542
+GMM classifier (EM, k=3/class)   CV PR-AUC=0.802 CV F1=0.597 | test AUC=0.9496 PR-AUC=0.824 F1=0.555 rec=0.896 prec=0.402
+K-Means k=2 (paper)              CV PR-AUC=0.105 CV F1=0.000 | test AUC=0.5241 PR-AUC=0.101 F1=0.000 rec=0.000 prec=0.000
+K-Means k=20 + cluster vote      CV PR-AUC=0.380 CV F1=0.313 | test AUC=0.8309 PR-AUC=0.330 F1=0.222 rec=0.146 prec=0.467
+Logistic + poly deg 2            CV PR-AUC=0.934 CV F1=0.801 | test AUC=0.9929 PR-AUC=0.958 F1=0.793 rec=0.958 prec=0.676
+SVM poly (deg 3)                 CV PR-AUC=0.916 CV F1=0.818 | test AUC=0.9903 PR-AUC=0.933 F1=0.829 rec=0.938 prec=0.744
+AdaBoost (stumps)                CV PR-AUC=0.974 CV F1=0.919 | test AUC=0.9987 PR-AUC=0.992 F1=0.957 rec=0.938 prec=0.978
+Extra Trees                      CV PR-AUC=0.972 CV F1=0.898 | test AUC=0.9980 PR-AUC=0.988 F1=0.962 rec=0.927 prec=1.000
+Bagged Trees                     CV PR-AUC=0.981 CV F1=0.914 | test AUC=0.9938 PR-AUC=0.986 F1=0.954 rec=0.969 prec=0.939
+HistGradientBoosting             CV PR-AUC=0.982 CV F1=0.918 | test AUC=0.9990 PR-AUC=0.992 F1=0.953 rec=0.958 prec=0.948
+LightGBM                         CV PR-AUC=0.982 CV F1=0.923 | test AUC=0.9990 PR-AUC=0.993 F1=0.959 rec=0.979 prec=0.940
+Voting (XGB+RF+MLP, soft)        CV PR-AUC=0.982 CV F1=0.932 | test AUC=0.9988 PR-AUC=0.992 F1=0.953 rec=0.958 prec=0.948
+Stacking (XGB+RF+MLP -> LR)      CV PR-AUC=0.982 CV F1=0.926 | test AUC=0.9989 PR-AUC=0.992 F1=0.958 rec=0.958 prec=0.958

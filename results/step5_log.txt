@@ -1,0 +1,23 @@
+Final model: LightGBM
+{'weighted': True, 'calibration': 'none', 'brier': 0.011347424835638008, 'log_loss': 0.03784036896320185, 'ece': np.float64(0.005597366855586673), 'pr_auc': 0.9813816311320263}
+{'weighted': True, 'calibration': 'sigmoid', 'brier': 0.011138853879520004, 'log_loss': 0.04003606860838642, 'ece': np.float64(0.006147354723690558), 'pr_auc': 0.9797972108093973}
+{'weighted': True, 'calibration': 'isotonic', 'brier': 0.011385247619728395, 'log_loss': 0.03759503610655307, 'ece': np.float64(0.004487487654892566), 'pr_auc': 0.9792996296030109}
+{'weighted': False, 'calibration': 'none', 'brier': 0.011638635560992176, 'log_loss': 0.040496361409525734, 'ece': np.float64(0.005987207314211158), 'pr_auc': 0.9805949830771752}
+{'weighted': False, 'calibration': 'sigmoid', 'brier': 0.011042999576973073, 'log_loss': 0.039859497969973234, 'ece': np.float64(0.004987556897373475), 'pr_auc': 0.9795992761829592}
+{'weighted': False, 'calibration': 'isotonic', 'brier': 0.011523498554719283, 'log_loss': 0.040145230777429416, 'ece': np.float64(0.003971151270460561), 'pr_auc': 0.9773285065748759}
+
+OOF calibration on TRAIN (lower Brier/log-loss/ECE = better)
+  weighted calibration  brier  log_loss    ece  pr_auc
+    False     sigmoid 0.0110    0.0399 0.0050  0.9796
+     True     sigmoid 0.0111    0.0400 0.0061  0.9798
+     True        none 0.0113    0.0378 0.0056  0.9814
+     True    isotonic 0.0114    0.0376 0.0045  0.9793
+    False    isotonic 0.0115    0.0401 0.0040  0.9773
+    False        none 0.0116    0.0405 0.0060  0.9806
+
+Selected by OOF Brier: weighted=False, calibration=sigmoid
+
+TEST SET (true positive rate = 0.0960)
+                              model  brier  log_loss    ece  roc_auc  pr_auc  mean_pred
+                raw class-weighted 0.0072    0.0252 0.0086   0.9990  0.9930     0.1046
+selected (sigmoid, weighted=False) 0.0067    0.0275 0.0088   0.9988  0.9913     0.1048

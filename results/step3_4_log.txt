@@ -1,0 +1,36 @@
+REPEATED-CV SUMMARY (50 folds)
+        model  pr_auc  roc_auc     f1  recall  precision  pr_auc_std
+    LightGBM  0.9801   0.9971 0.9216  0.9193     0.9248      0.0099
+      HistGB  0.9800   0.9972 0.9217  0.9094     0.9353      0.0098
+     XGBoost  0.9798   0.9971 0.9150  0.9224     0.9089      0.0092
+RandomForest  0.9770   0.9967 0.9136  0.8714     0.9616      0.0099
+    AdaBoost  0.9708   0.9956 0.9097  0.8833     0.9388      0.0117
+         MLP  0.9496   0.9895 0.8934  0.8656     0.9250      0.0130
+
+NADEAU-BENGIO: LightGBM (best CV PR-AUC) vs each other model
+           vs  mean_diff   NB_p  naive_p  holm_p
+         MLP     0.0305 0.0000   0.0000  0.0001
+    AdaBoost     0.0093 0.0232   0.0000  0.0927
+RandomForest     0.0031 0.3155   0.0005  0.9464
+     XGBoost     0.0003 0.8788   0.5759  1.0000
+      HistGB     0.0001 0.9721   0.8976  1.0000
+
+TEST-SET BOOTSTRAP 95% CIs (1000 resamples, 1000 customers, ~96 positives)
+        model               pr_auc              roc_auc                   f1               recall            precision
+    LightGBM 0.994 [0.984, 1.000] 0.999 [0.998, 1.000] 0.955 [0.923, 0.981] 0.980 [0.948, 1.000] 0.931 [0.881, 0.977]
+      HistGB 0.993 [0.984, 0.999] 0.999 [0.998, 1.000] 0.953 [0.923, 0.979] 0.959 [0.914, 0.991] 0.948 [0.902, 0.988]
+     XGBoost 0.994 [0.986, 0.999] 0.999 [0.998, 1.000] 0.940 [0.907, 0.973] 0.970 [0.932, 1.000] 0.912 [0.856, 0.962]
+RandomForest 0.991 [0.980, 0.998] 0.999 [0.997, 1.000] 0.947 [0.914, 0.975] 0.938 [0.887, 0.981] 0.957 [0.913, 0.990]
+    AdaBoost 0.992 [0.979, 0.999] 0.999 [0.997, 1.000] 0.957 [0.929, 0.984] 0.938 [0.887, 0.980] 0.978 [0.944, 1.000]
+         MLP 0.974 [0.952, 0.992] 0.996 [0.991, 0.999] 0.932 [0.895, 0.967] 0.948 [0.901, 0.989] 0.917 [0.860, 0.966]
+
+McNEMAR (exact) on test-set errors, LightGBM vs others
+           vs  best_right_other_wrong  other_right_best_wrong     p
+      HistGB                       2                       2 1.000
+     XGBoost                       3                       0 0.250
+RandomForest                       6                       5 1.000
+    AdaBoost                       4                       5 1.000
+         MLP                       9                       5 0.424
+
+STEP 4  Final model (highest mean CV PR-AUC): LightGBM
+Statistically indistinguishable from it (NB p>0.05): ['LightGBM', 'RandomForest', 'XGBoost', 'HistGB']

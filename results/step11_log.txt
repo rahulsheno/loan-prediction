@@ -1,0 +1,15 @@
+== A. Monotonic constraints (paired 5x10 CV, seed 42) ==
+default LightGBM                         PR-AUC=0.9801  F1=0.9216
+monotone Income+, CD Account+             PR-AUC=0.9755  F1=0.9161  diff=-0.0046  NB p=0.136
+monotone Income+, CCAvg+, CD Account+     PR-AUC=0.9697  F1=0.9077  diff=-0.0104  NB p=0.031
+
+== B. Optuna, 25 trials (TPE) ==
+best params: {'num_leaves': 55, 'learning_rate': 0.0837, 'n_estimators': 410, 'min_child_samples': 23, 'subsample': 0.9833, 'colsample_bytree': 0.7716, 'reg_lambda': 0.0037, 'scale_pos_weight': 6.5053} 
+inner-CV PR-AUC (optimistic) = 0.9838
+fresh folds: default PR-AUC=0.9795 F1=0.9181 | tuned PR-AUC=0.9843 F1=0.9405 | diff=+0.0047  NB p=0.029
+
+TEST SET (1000 customers)
+                 model  test PR-AUC  test F1  recall  precision
+              default       0.9932   0.9543  0.9792     0.9307
+monotone Income+, CD+       0.9867   0.9246  0.9583     0.8932
+         Optuna-tuned       0.9956   0.9688  0.9688     0.9688

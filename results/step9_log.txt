@@ -1,0 +1,69 @@
+                           model  fidelity  F1 vs truth  recall  precision
+        final LightGBM (teacher)     1.000        0.958   0.958      0.958
+               surrogate depth 2     0.957        0.746   0.781      0.714
+               surrogate depth 3     0.987        0.904   0.927      0.881
+               surrogate depth 4     0.997        0.953   0.958      0.948
+               surrogate depth 5     0.989        0.925   0.958      0.893
+plain tree depth 3 (true labels)     0.987        0.904   0.927      0.881
+
+SURROGATE RULES (depth 3; class 1 = target the customer)
+|--- Income <= 98.50
+|   |--- CCAvg <= 2.95
+|   |   |--- weights: [2845.00, 0.00] class: 0
+|   |--- CCAvg >  2.95
+|   |   |--- CD Account <= 0.50
+|   |   |   |--- weights: [136.00, 21.00] class: 0
+|   |   |--- CD Account >  0.50
+|   |   |   |--- weights: [3.00, 10.00] class: 1
+|--- Income >  98.50
+|   |--- Education <= 1.50
+|   |   |--- Family <= 2.50
+|   |   |   |--- weights: [531.00, 5.00] class: 0
+|   |   |--- Family >  2.50
+|   |   |   |--- weights: [12.00, 60.00] class: 1
+|   |--- Education >  1.50
+|   |   |--- Income <= 114.50
+|   |   |   |--- weights: [88.00, 36.00] class: 0
+|   |   |--- Income >  114.50
+|   |   |   |--- weights: [2.00, 251.00] class: 1
+
+
+SURROGATE RULES (depth 4; class 1 = target the customer)
+|--- Income <= 98.50
+|   |--- CCAvg <= 2.95
+|   |   |--- weights: [2845.00, 0.00] class: 0
+|   |--- CCAvg >  2.95
+|   |   |--- CD Account <= 0.50
+|   |   |   |--- Income <= 92.50
+|   |   |   |   |--- weights: [127.00, 14.00] class: 0
+|   |   |   |--- Income >  92.50
+|   |   |   |   |--- weights: [9.00, 7.00] class: 0
+|   |   |--- CD Account >  0.50
+|   |   |   |--- CCAvg <= 4.25
+|   |   |   |   |--- weights: [0.00, 9.00] class: 1
+|   |   |   |--- CCAvg >  4.25
+|   |   |   |   |--- weights: [3.00, 1.00] class: 0
+|--- Income >  98.50
+|   |--- Education <= 1.50
+|   |   |--- Family <= 2.50
+|   |   |   |--- Income <= 99.50
+|   |   |   |   |--- weights: [2.00, 2.00] class: 0
+|   |   |   |--- Income >  99.50
+|   |   |   |   |--- weights: [529.00, 3.00] class: 0
+|   |   |--- Family >  2.50
+|   |   |   |--- Income <= 113.50
+|   |   |   |   |--- weights: [12.00, 6.00] class: 0
+|   |   |   |--- Income >  113.50
+|   |   |   |   |--- weights: [0.00, 54.00] class: 1
+|   |--- Education >  1.50
+|   |   |--- Income <= 114.50
+|   |   |   |--- CCAvg <= 2.95
+|   |   |   |   |--- weights: [76.00, 11.00] class: 0
+|   |   |   |--- CCAvg >  2.95
+|   |   |   |   |--- weights: [12.00, 25.00] class: 1
+|   |   |--- Income >  114.50
+|   |   |   |--- Income <= 116.50
+|   |   |   |   |--- weights: [2.00, 7.00] class: 1
+|   |   |   |--- Income >  116.50
+|   |   |   |   |--- weights: [0.00, 244.00] class: 1
+

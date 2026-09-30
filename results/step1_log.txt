@@ -1,0 +1,24 @@
+LightGBM      base                 PR-AUC=0.9802±0.0089  AUC=0.9975  F1=0.9230
+LightGBM      +cc_to_income        PR-AUC=0.9799±0.0090  AUC=0.9974  F1=0.9211
+LightGBM      +income_per_family   PR-AUC=0.9819±0.0065  AUC=0.9976  F1=0.9221
+LightGBM      +mortgage_to_income  PR-AUC=0.9801±0.0077  AUC=0.9974  F1=0.9216
+LightGBM      +all three           PR-AUC=0.9810±0.0067  AUC=0.9975  F1=0.9205
+XGBoost       base                 PR-AUC=0.9807±0.0075  AUC=0.9975  F1=0.9166
+XGBoost       +all three           PR-AUC=0.9809±0.0066  AUC=0.9976  F1=0.9174
+HistGB        base                 PR-AUC=0.9800±0.0085  AUC=0.9971  F1=0.9176
+HistGB        +all three           PR-AUC=0.9815±0.0067  AUC=0.9976  F1=0.9236
+RandomForest  base                 PR-AUC=0.9777±0.0091  AUC=0.9969  F1=0.9123
+RandomForest  +all three           PR-AUC=0.9783±0.0073  AUC=0.9972  F1=0.9065
+MLP           base                 PR-AUC=0.9507±0.0120  AUC=0.9897  F1=0.8950
+MLP           +all three           PR-AUC=0.9544±0.0069  AUC=0.9902  F1=0.8914
+LogReg        base                 PR-AUC=0.7849±0.0373  AUC=0.9580  F1=0.6122
+LogReg        +all three           PR-AUC=0.7939±0.0362  AUC=0.9610  F1=0.6304
+
+PR-AUC change from adding all three features (positive = helps):
+model
+HistGB          0.0015
+LightGBM        0.0008
+LogReg          0.0090
+MLP             0.0037
+RandomForest    0.0006
+XGBoost         0.0002
